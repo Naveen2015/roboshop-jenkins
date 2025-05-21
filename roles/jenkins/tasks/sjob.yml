@@ -8,7 +8,7 @@
   ignore_errors: true
 - name: print
   ansible.builtin.debug:
-    msg: {{jenkins_job_status}}
+    msg: "{{jenkins_job_status}}"
 
 - name: Copy Xml file
   ansible.builtin.template:
