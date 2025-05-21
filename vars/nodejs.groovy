@@ -17,7 +17,7 @@ def call(){
             }
             stage('UNIT TEST') {
                 steps {
-                    sh 'unit test cases'
+                    sh 'echo unit test cases'
                 }
             }
 
