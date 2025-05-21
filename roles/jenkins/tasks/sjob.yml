@@ -6,6 +6,10 @@
     url: http://172.31.8.64:8080
   register: jenkins_job_status
   ignore_errors: true
+- name: print
+  ansible.builtin.debug:
+    msg: {{jenkins_job_status}}
+
 - name: Copy Xml file
   ansible.builtin.template:
     src: sjob.xml
