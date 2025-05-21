@@ -1,15 +1,15 @@
 - name: Check if jenkins job already exists
   community.general.jenkins_job_info:
     name: "{{ item.job_name }}"
-    url: http://172.31.8.64:8080
     user: admin
     password: admin
-  register: my_jenkins_job_info
+    url: http://172.31.8.64:8080
+  register: jenkins_job_status
 - name: Copy Xml file
   ansible.builtin.template:
     src: sjob.xml
     dest: /tmp/test.xml
-  when: my_jenkins_job_info.failed or override
+  when: jenkins_job_status.failed or override
   ignore_errors: true
 
 - name: Create a jenkins job
@@ -19,5 +19,5 @@
     password: admin
     url: http://172.31.8.64:8080
     user: admin
-  when: my_jenkins_job_info.failed or override
+  when: jenkins_job_status.failed or override
   ignore_errors: true
