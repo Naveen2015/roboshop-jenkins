@@ -2,3 +2,11 @@ sjobs:
   - { git_repo_url: https://github.com/Naveen2015/roboshop-terraform-new.git, job_name: roboshop-terraform}
   - { git_repo_url: https://github.com/Naveen2015/roboshop-ansible-new.git, job_name: roboshop-ansible}
   - { git_repo_url: https://github.com/Naveen2015/aws-ssm-parameter-store-new.git, job_name: aws-ssm}
+
+mjobs:
+  - { git_repo_url: https://github.com/Naveen2015/frontend.git, job_name: frontend}
+  - { git_repo_url: https://github.com/Naveen2015/catalogue.git, job_name: catalogue}
+  - { git_repo_url: https://github.com/Naveen2015/user.git, job_name: user}
+  - { git_repo_url: https://github.com/Naveen2015/cart.git, job_name: cart}
+  - { git_repo_url: https://github.com/Naveen2015/shipping.git, job_name: shipping}
+  - { git_repo_url: https://github.com/Naveen2015/payment.git, job_name: payment}
