@@ -10,7 +10,7 @@ def call(){
             choice(name: 'action', choices: ['apply', 'destroy'], description: 'Pick environment')
         }
         options {
-            ansicolor('xterm')
+            ansiColor('xterm')
         }
         stages {
             stage('Terraform INIT') {
