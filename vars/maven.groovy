@@ -10,6 +10,12 @@ def call(){
             ansiColor('xterm')
         }
         stages {
+            stage('code compile') {
+                steps {
+                    sh 'mvn compile'
+                }
+            }
+
             stage('code quality') {
                 steps {
                     sh 'echo code quality'
