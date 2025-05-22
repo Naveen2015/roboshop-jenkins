@@ -20,6 +20,12 @@ def call(){
                     sh 'echo unit test cases'
                 }
             }
+            stage('Release Application') {
+                steps {
+                    sh 'env'
+                    sh 'echo release application'
+                }
+            }
 
         }
         post {
