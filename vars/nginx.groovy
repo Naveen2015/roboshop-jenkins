@@ -20,7 +20,6 @@ def call(){
                     sh 'echo unit test cases'
                 }
             }
-
             stage('Release Application') {
                 when {
                     expression {
@@ -28,8 +27,10 @@ def call(){
                     }
                 }
                 steps {
+
                     sh 'echo $TAG_NAME > VERSION'
-                    sh 'zip -r ${component}-${TAG_NAME}.zip *.ini *.py *.txt VERSION'
+                    sh 'zip -r ${component}-${TAG_NAME}.zip *'
+                    sh 'zip -d ${component}-${TAG_NAME}.zip Jenkinsfile'
                     sh 'curl -v -u admin:admin --upload-file ${component}-${TAG_NAME}.zip http://172.31.42.37:8081/repository/${component}/${component}-${TAG_NAME}.zip'
                 }
             }
